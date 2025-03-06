@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Momentinho</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000; /* Fundo preto */
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .polaroid {
+            background: white;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            text-align: center;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            max-width: 350px;
+        }
+        .polaroid img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombras da foto para parecer polaroid */
+        }
+        .message {
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: left;
+            margin-left: 10px;
+            margin-right: 10px;
+            color: black; /* Texto preto */
+        }
+        .music-player {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+    <div class="polaroid">
+        <div class="music-player">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1DLKuppSYytOuxhtI6KBGu?si=2102dcd6a8534044" width="100%" height="80" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+        <img src="Untitled design.jpg" alt="foto do casal">
+        <div class="message">
+            Feliz vida sua indiota! Conte cmg pra tudo.<br>Uma verdade te digo, amo te pertubar, mas uma verdade mais sincera é que te amo!<br>Para camarão queimado ❤️
+        </div>
+    </div>
+</body>
+</html>
