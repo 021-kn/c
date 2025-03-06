@@ -14,6 +14,18 @@
             flex-direction: column;
             font-family: Arial, sans-serif;
             color: white;
+            margin: 0;
+        }
+        /* Música player fora da moldura */
+        .music-player {
+            display: none; /* Inicialmente oculto */
+            justify-content: center;
+            position: absolute;
+            top: 10px; /* Distância do topo */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            z-index: 10; /* Garante que o player fique acima da imagem */
         }
         .polaroid {
             background: white;
@@ -24,6 +36,8 @@
             position: relative;
             overflow: hidden;
             max-width: 350px;
+            margin-top: 80px; /* Ajuste para não sobrepor o player */
+            display: none; /* Inicialmente oculto */
         }
         .polaroid img {
             width: 100%;
@@ -40,27 +54,59 @@
             margin-right: 10px;
             color: black; /* Texto preto */
         }
-        .music-player {
+        .dedicatoria {
+            color: #ff5733; /* Cor especial para a dedicatória */
+            font-style: italic; /* Estilo itálico */
+        }
+        /* Estilos do botão */
+        .click-button {
+            background-color: #ff5733;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
             display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
+            align-items: center;
+            font-weight: bold;
+        }
+        .click-button:hover {
+            background-color: #ff3d00;
+        }
+        .click-button i {
+            margin-right: 8px;
         }
     </style>
 </head>
 <body>
+    <!-- Botão para mostrar a foto e o player -->
+    <button class="click-button" onclick="showContent()">
+        <i>&#10084;</i>Click
+    </button>
+
+    <!-- Foto e mensagem -->
     <div class="polaroid">
-        <div class="music-player">
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1DLKuppSYytOuxhtI6KBGu?si=2102dcd6a8534044" width="100%" height="80" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-        </div>
         <img src="Untitled design.jpg" alt="foto do casal">
         <div class="message">
-            Feliz vida sua indiota! Conte cmg pra tudo.<br>Uma verdade te digo, amo te pertubar, mas uma verdade mais sincera é que te amo!<br>Para camarão queimado ❤️
+            Feliz vida sua indiota! Conte cmg pra tudo.<br>
+            Uma verdade te digo, amo te pertubar, mas uma verdade mais sincera é que te amo!<br>
+            <span class="dedicatoria">Para: camarão queimado ❤️</span>
         </div>
     </div>
+
+    <!-- Player de música fora da polaroid -->
+    <div class="music-player">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1DLKuppSYytOuxhtI6KBGu?si=2102dcd6a8534044" width="100%" height="80" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+
+    <script>
+        // Função para mostrar a foto, a mensagem e o player de música ao clicar no botão
+        function showContent() {
+            document.querySelector('.polaroid').style.display = 'block'; // Mostrar a foto e a mensagem
+            document.querySelector('.music-player').style.display = 'flex'; // Mostrar o player de música
+            document.querySelector('.click-button').style.display = 'none'; // Esconder o botão
+        }
+    </script>
 </body>
 </html>
